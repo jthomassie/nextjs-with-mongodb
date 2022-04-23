@@ -3,12 +3,12 @@ import { connectToDatabase } from "../../util/mongodb";
 export default async (req, res) => {
   const { db } = await connectToDatabase();
 
-  const movies = await db
-    .collection("movies")
+  const features = await db
+    .collection("odnr_waterway_points")
     .find({})
-    .sort({ metacritic: -1 })
-    .limit(20)
+    .sort({ "properties.SUBTYPE": 1 })
+    .limit(60)
     .toArray();
 
-  res.json(movies);
+  res.json(features);
 };

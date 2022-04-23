@@ -1,4 +1,4 @@
-import { connectToDatabase } from "../util/mongodb";
+import { connectToDatabase } from "../util/mongodbxxx";
 
 export default function Top({ movies }) {
   return (
@@ -24,7 +24,7 @@ export async function getStaticProps() {
   const { db } = await connectToDatabase();
 
   const movies = await db
-    .collection("movies")
+  const collection = db.collection("odnr_waterway_points");
     .find({})
     .sort({ metacritic: -1 })
     .limit(1000)
