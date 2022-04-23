@@ -1,15 +1,15 @@
 import { connectToDatabase } from "../util/mongodbxxx";
 
-export default function Top({ movies }) {
+export default function Top({ features }) {
   return (
     <div>
       <h1>Top 1000 Features</h1>
       <ul>
-        {movies.map((movie) => (
+        {features.map((f) => (
           <li>
-            <h2>{movie.title}</h2>
-            <h3>{movie.metacritic}</h3>
-            <p>{movie.plot}</p>
+            <h2>{f.title}</h2>
+            <h3>{f.metacritic}</h3>
+            <p>{f.plot}</p>
           </li>
         ))}
       </ul>
