@@ -4,7 +4,7 @@ import { sevenCounty } from "../geojson/sevenCounty";
 
 const Features = ({ features }) => {
   //
-  const { data, error } = useSWR("/api/user/123", fetcher);
+  // const { data, error } = useSWR("/api/user/123", fetcher);
 
   return (
     <div>
