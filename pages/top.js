@@ -3,10 +3,7 @@ import { connectToDatabase } from "../util/mongodbxxx";
 export default function Top({ movies }) {
   return (
     <div>
-      <h1>Top 1000 Movies of All Time</h1>
-      <p>
-        <small>(According to Metacritic)</small>
-      </p>
+      <h1>Top 1000 Features</h1>
       <ul>
         {movies.map((movie) => (
           <li>
@@ -22,17 +19,16 @@ export default function Top({ movies }) {
 
 export async function getStaticProps() {
   const { db } = await connectToDatabase();
-
-  const movies = await db
-  const collection = db.collection("odnr_waterway_points");
+  const features = await db
+    .collection("odnr_waterway_points")
     .find({})
-    .sort({ metacritic: -1 })
+    .sort({ "properties.SUBTYPE": 1 })
     .limit(1000)
     .toArray();
-
+  //
   return {
     props: {
-      movies: JSON.parse(JSON.stringify(movies)),
+      features: JSON.parse(JSON.stringify(features)),
     },
   };
 }
