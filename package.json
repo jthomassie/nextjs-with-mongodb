@@ -1,5 +1,5 @@
 {
-  "name": "with-mongodb",
+  "name": "nextjs-mongodb",
   "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
@@ -7,10 +7,10 @@
     "start": "next start"
   },
   "dependencies": {
-    "mongodb": "^3.5.9",
+    "mongodb": "latest",
     "next": "latest",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "latest",
+    "react-dom": "latest"
   },
   "license": "MIT"
 }
