@@ -7,7 +7,7 @@ export default function Top({ features }) {
       <ul>
         {features.map((f, i) => (
           <li key={`f${i}`}>
-            <p>{`${f._id}: ${f.count}`}</p>
+            <p>{`${f.properties.SUBTYPE}: ${f._id}`}</p>
           </li>
         ))}
       </ul>
