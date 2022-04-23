@@ -5,11 +5,9 @@ export default function Top({ features }) {
     <div>
       <h1>Top 1000 Features</h1>
       <ul>
-        {features.map((f) => (
-          <li>
-            <h2>{f.title}</h2>
-            <h3>{f.metacritic}</h3>
-            <p>{f.plot}</p>
+        {features.map((f, i) => (
+          <li key={`f${i}`}>
+            <p>{`${f._id}: ${f.count}`}</p>
           </li>
         ))}
       </ul>
