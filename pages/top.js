@@ -1,4 +1,5 @@
 import { connectToDatabase } from "../util/mongodbxxx";
+let col = process.env.MONGODB_COL;
 
 export default function Top({ features }) {
   return (
@@ -18,7 +19,7 @@ export default function Top({ features }) {
 export async function getStaticProps() {
   const { db } = await connectToDatabase();
   const features = await db
-    .collection("odnr_waterway_points")
+    .collection(col)
     .find({})
     .sort({ "properties.SUBTYPE": 1 })
     .limit(1000)
