@@ -1,6 +1,8 @@
 // pages/features.js
 import { connectToDatabase } from "../util/mongodbxxx";
+const ObjectId = require("mongodb").ObjectId;
 import { sevenCounty } from "../geojson/sevenCounty";
+let col = process.env.MONGODB_COL;
 
 const Features = ({ features }) => {
   //
@@ -23,7 +25,7 @@ const Features = ({ features }) => {
 export async function getServerSideProps() {
   //
   const { db } = await connectToDatabase();
-  const collection = db.collection("odnr_waterway_points");
+  const collection = db.collection(col);
 
   // code examples can be pasted here...
 
