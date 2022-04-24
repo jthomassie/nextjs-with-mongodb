@@ -7,9 +7,9 @@ export default async (req, res) => {
 
   const features = await db
     .collection(col)
-    .find({})
-    .sort({ "properties.SUBTYPE": 1 })
-    .limit(60)
+    .find({ _id: new ObjectId(req.body) })
+    // .sort({ "properties.SUBTYPE": 1 })
+    // .limit(60)
     .toArray();
 
   res.json(features);

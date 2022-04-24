@@ -4,7 +4,7 @@ let col = process.env.MONGODB_COL;
 export default function Top({ features }) {
   return (
     <div>
-      <h1>Top 1000 Features</h1>
+      <h1>Top 1,000 Features</h1>
       <ul>
         {features.map((f, i) => (
           <li key={`f${i}`}>
